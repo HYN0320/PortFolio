@@ -213,7 +213,10 @@ export default function Projects() {
               {/* 🔥 이미지 클릭 시 상세 페이지 이동 */}
               <div
                 className="project-image"
-                onClick={() => navigate(`/projects/${project.id}`)}
+                  onClick={() => {
+              window.scrollTo(0, 0);
+              navigate(`/projects/${project.id}`);
+               }}
               >
                 <img src={project.image} alt={project.title} />
                 <div className="image-overlay">

@@ -5,11 +5,11 @@ import './Curate.css';
    IMAGE IMPORTS
 ===================== */
 import curateErd from '../../assets/projects/curate-erd.png';
-import curate1 from '../../assets/projects/curate1 copy.png';
-import curate2 from '../../assets/projects/curate2.png';
-import curate3 from '../../assets/projects/curate3.png';
-import curate4 from '../../assets/projects/curate4.png';
 import graphImg from '../../assets/projects/graph.png';
+import knowledgeImg from '../../assets/projects/knowledge.png';
+import textImg from '../../assets/projects/text.png';
+import tagImg from '../../assets/projects/tag.png';
+import nodeImg from '../../assets/projects/node.png';
 
 const Curate = () => {
   const sectionsRef = useRef([]);
@@ -208,7 +208,7 @@ const Curate = () => {
             </ul>
           </div>
           <div className="curate-feature-visual">
-            <img src={curate4} alt="Chat Interface" />
+            <img src={knowledgeImg} alt="Chat Interface" />
           </div>
         </div>
       </section>
@@ -251,7 +251,7 @@ const Curate = () => {
             </p>
           </div>
           <div className="curate-code-visual">
-            <img src={curate1} alt="Summary Pipeline" />
+            <img src={textImg} alt="Summary Pipeline" />
           </div>
         </div>
       </section>
@@ -259,7 +259,7 @@ const Curate = () => {
       <section ref={addToRefs} className="curate-code-section curate-alt">
         <div className="curate-code-grid">
           <div className="curate-code-visual">
-            <img src={curate2} alt="Tag System" />
+            <img src={tagImg} alt="Tag System" />
           </div>
           <div className="curate-code-content">
             <span className="curate-label">TAG SYSTEM</span>
@@ -284,7 +284,7 @@ const Curate = () => {
           <div className="curate-code-content">
             <span className="curate-label">GRAPH</span>
             <h2 className="curate-section-title">
-              Keyword–Card 이분 그래프 생성
+              Keyword–Card 노드 그래프 생성
             </h2>
             <p className="curate-description">
               GraphService는 SummaryCard와 키워드 간의 관계를
@@ -303,7 +303,7 @@ const Curate = () => {
             </ul>
           </div>
           <div className="curate-code-visual">
-            <img src={curate3} alt="Graph Service" />
+            <img src={nodeImg} alt="Graph Service" />
           </div>
         </div>
       </section>

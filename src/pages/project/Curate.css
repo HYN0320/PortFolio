@@ -65,7 +65,7 @@
 }
 
 .curate-project-number {
-  font-family: 'Space Mono', monospace;
+   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.875rem;
   letter-spacing: 0.3em;
   color: #666;
@@ -107,7 +107,7 @@
    Labels & Titles
 ===================== */
 .curate-label {
-  font-family: 'Space Mono', monospace;
+   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   color: #999;
@@ -117,7 +117,7 @@
 }
 
 .curate-section-title {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: 400;
   margin: 0 0 1.5rem 0;
   letter-spacing: -0.01em;
@@ -178,7 +178,7 @@
 }
 
 .curate-node-info h4 {
-  font-family: 'Space Mono', monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 1rem;
   margin: 0 0 0.5rem 0;
   color: #1a1a1a;
@@ -228,7 +228,7 @@
   font-size: 1.2rem;
   color: #bbb;
   margin: 0.5rem 0;
-  font-family: 'Space Mono', monospace;
+ font-family: 'IBM Plex Mono', monospace;
 }
 
 /* =====================
