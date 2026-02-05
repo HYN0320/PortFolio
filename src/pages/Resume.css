@@ -1,0 +1,113 @@
+.resume {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 32px 160px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 72px;
+
+  background: #0f0f0f;
+  color: #e5e7eb;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.resume-sidebar {
+  position: relative;
+}
+
+.resume-name {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.resume-role {
+  margin-top: 6px;
+  font-size: 15px;
+  color: #f43f5e;
+  letter-spacing: 0.04em;
+}
+
+.resume-block {
+  margin-top: 40px;
+}
+
+.resume-block h4 {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  color: rgba(255,255,255,0.45);
+}
+
+.resume-block p,
+.resume-block li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+}
+
+.resume-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resume-block li {
+  margin-bottom: 6px;
+}
+
+/* =========================
+   MAIN
+========================= */
+.resume-main {
+  max-width: 720px;
+}
+
+.resume-section {
+  margin-bottom: 64px;
+}
+
+.resume-section h3 {
+  font-size: 20px;
+  margin-bottom: 18px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.resume-section p,
+.resume-section li {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.85);
+}
+
+.resume-item {
+  margin-bottom: 32px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.item-header span {
+  color: rgba(255,255,255,0.6);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 900px) {
+  .resume {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .resume-main {
+    max-width: 100%;
+  }
+}

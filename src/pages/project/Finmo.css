@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+.finmo-main {
+  font-family: 'Inter', sans-serif;
+  background: #f8fafb;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+/* Animations */
+.finmo-hero,
+.finmo-arch,
+.finmo-feature,
+.finmo-code,
+.finmo-retro {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.finmo-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero */
+.finmo-hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(165deg, #0f766e 0%, #14b8a6 50%, #2dd4bf 100%);
+  padding: 3rem 2rem;
+  overflow: hidden;
+}
+
+.finmo-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255, 255, 255, 0.02) 40px,
+      rgba(255, 255, 255, 0.02) 80px
+    );
+}
+
+.finmo-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  text-align: center;
+  color: #fff;
+}
+
+.finmo-badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.finmo-title {
+  font-size: clamp(4.5rem, 14vw, 9rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin: 0 0 1.5rem 0;
+  line-height: 0.95;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.finmo-lead {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+.finmo-intro-text {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Container */
+.finmo-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Common Elements */
+.finmo-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #0f766e;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.finmo-heading {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.finmo-desc {
+  font-size: 1.15rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.finmo-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 1.25rem;
+}
+
+.finmo-points {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0 0;
+}
+
+.finmo-points li {
+  padding-left: 1.75rem;
+  margin-bottom: 0.875rem;
+  position: relative;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.finmo-points li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #14b8a6;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* ===============================
+   Architecture (ORIGINAL)
+================================ */
+.finmo-arch {
+  padding: 7rem 0;
+  background: #fff;
+}
+
+.finmo-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.finmo-arch-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.finmo-tier {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.finmo-tier.finmo-tier-row {
+  gap: 2.5rem;
+}
+
+.finmo-node {
+  background: #f8fafb;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  min-width: 200px;
+  transition: all 0.3s ease;
+}
+
+.finmo-node:hover {
+  transform: translateY(-6px);
+  border-color: #14b8a6;
+  box-shadow: 0 12px 36px rgba(20, 184, 166, 0.15);
+}
+
+.finmo-node-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.finmo-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.finmo-node-header h3 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.05rem;
+  margin: 0;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.finmo-node-stack {
+  font-size: 0.9rem;
+  color: #64748b;
+  text-align: center;
+  margin: 0;
+}
+
+.finmo-arrow {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #cbd5e1;
+  margin: 1.25rem 0;
+}
+
+/* ==================================================
+   Architecture – SYSTEM ROLE EMPHASIS (ADDED)
+   ※ 기존 스타일 유지, 시각적 의미만 강화
+================================================== */
+
+/* 핵심 Service 레이어 */
+.finmo-tier.finmo-core .finmo-node {
+  background: linear-gradient(165deg, #f0fdfa 0%, #ecfeff 100%);
+  border-color: #14b8a6;
+  box-shadow: 0 18px 48px rgba(20, 184, 166, 0.25);
+  transform: scale(1.06);
+}
+
+.finmo-tier.finmo-core .finmo-icon {
+  color: #0f766e;
+}
+
+/* 의존 리소스 (DB / External API) */
+.finmo-tier.finmo-deps .finmo-node {
+  background: #f8fafb;
+  border-style: dashed;
+  border-color: #cbd5e1;
+  opacity: 0.85;
+}
+
+.finmo-tier.finmo-deps .finmo-icon {
+  color: #64748b;
+}
+
+/* ===============================
+   Features
+================================ */
+.finmo-feature {
+  padding: 7rem 0;
+  background: #fff;
+}
+
+.finmo-feature.finmo-feature-alt {
+  background: #f8fafb;
+}
+
+.finmo-feature-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.finmo-feature-grid.finmo-reverse {
+  grid-template-columns: 1fr 1.3fr;
+}
+
+.finmo-feature-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+/* ===============================
+   Code Sections
+================================ */
+.finmo-code {
+  padding: 7rem 0;
+  background: #fff;
+}
+
+.finmo-code.finmo-code-alt {
+  background: #f8fafb;
+}
+
+.finmo-code-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.finmo-code-grid.finmo-reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.finmo-code-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+/* ===============================
+   Retrospective
+================================ */
+.finmo-retro {
+  padding: 7rem 0;
+  background: linear-gradient(165deg, #0f766e 0%, #14b8a6 100%);
+  color: #fff;
+}
+
+.finmo-retro-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.finmo-retro .finmo-tag {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.finmo-retro-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+  letter-spacing: -0.02em;
+}
+
+.finmo-retro-text {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.finmo-retro-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+/* ===============================
+   Responsive
+================================ */
+@media (max-width: 968px) {
+  .finmo-feature-grid,
+  .finmo-feature-grid.finmo-reverse,
+  .finmo-code-grid,
+  .finmo-code-grid.finmo-reverse {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .finmo-tier.finmo-tier-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .finmo-hero,
+  .finmo-arch,
+  .finmo-feature,
+  .finmo-code,
+  .finmo-retro {
+    padding: 5rem 0;
+  }
+
+  .finmo-wrap {
+    padding: 0 1.5rem;
+  }
+
+  .finmo-hero {
+    min-height: 70vh;
+  }
+}

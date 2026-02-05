@@ -1,0 +1,558 @@
+.projects {
+  position: relative;
+  background: linear-gradient(180deg, #0a0a0f 0%, #0f0f14 100%);
+  color: #ffffff;
+  padding: 140px 0 160px;
+  overflow: hidden;
+}
+
+/* 배경 효과 */
+.projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(139,92,246,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(244,63,94,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.projects-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   HEADER
+========================= */
+.projects-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.header-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.3);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #a78bfa;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.projects-title {
+  font-size: clamp(48px, 6vw, 68px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 50%, #f43f5e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.projects-subtitle {
+  font-size: 18px;
+  color: rgba(255,255,255,0.6);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* =========================
+   FILTER
+========================= */
+.project-filter {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  color: rgba(255,255,255,0.6);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-icon {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.9);
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(244,63,94,0.2) 100%);
+  border-color: rgba(139,92,246,0.4);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(139,92,246,0.2);
+}
+
+.filter-btn.active .filter-icon {
+  transform: scale(1.2);
+}
+
+/* =========================
+   GRID
+========================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =========================
+   CARD
+========================= */
+.project-card {
+  position: relative;
+  background: rgba(15,15,20,0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--card-accent), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255,255,255,0.15);
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* 카드별 액센트 컬러 */
+.project-card.personal {
+  --card-accent: #f43f5e;
+}
+
+.project-card.team {
+  --card-accent: #3b82f6;
+}
+
+/* =========================
+   IMAGE
+========================= */
+.project-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000000;
+  flex-shrink: 0;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8) 0%,
+    rgba(0,0,0,0.4) 50%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-image:hover .image-overlay {
+  opacity: 1;
+}
+
+.view-detail {
+  padding: 10px 24px;
+  background: rgba(255,255,255,0.95);
+  color: #000000;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
+}
+
+.project-image:hover .view-detail {
+  transform: translateY(0);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.project-content {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 카테고리 뱃지 */
+.project-category {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(var(--accent-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--card-accent);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-card.personal {
+  --accent-rgb: 244, 63, 94;
+}
+
+.project-card.team {
+  --accent-rgb: 59, 130, 246;
+}
+
+/* 타이틀 */
+.project-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.project-subtitle {
+  font-size: 14px;
+  color: var(--card-accent);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 16px;
+}
+
+/* 태그 */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  padding: 5px 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+}
+
+/* 기술 스택 */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.tech-item {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+}
+.tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.tech-item:not(:last-child)::after {
+  content: "·";
+  margin-left: 6px;
+  color: rgba(255,255,255,0.3);
+}
+.tech-label {
+  font-weight: 700;
+  opacity: 0.9;
+  margin-right: 6px;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+.project-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: rgba(255,255,255,0.8);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.action-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.action-btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.action-btn.github:hover {
+  background: rgba(139,92,246,0.2);
+  border-color: rgba(139,92,246,0.4);
+  color: #a78bfa;
+}
+
+.action-btn.pdf:hover {
+  background: rgba(244,63,94,0.2);
+  border-color: rgba(244,63,94,0.4);
+  color: #f43f5e;
+}
+
+.action-btn.story:hover {
+  background: rgba(59,130,246,0.2);
+  border-color: rgba(59,130,246,0.4);
+  color: #3b82f6;
+}
+
+/* =========================
+   STORY (설계 설명)
+========================= */
+.project-story {
+  margin-top: 24px;
+  padding: 24px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  animation: expandStory 0.4s ease;
+}
+
+@keyframes expandStory {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.story-section {
+  margin-bottom: 20px;
+}
+
+.story-section:last-child {
+  margin-bottom: 0;
+}
+
+.story-section h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.story-section p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+}
+
+.story-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.story-section li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 6px;
+}
+
+.story-section li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--card-accent);
+  font-weight: 700;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 100px 0 120px;
+  }
+
+  .projects-container {
+    padding: 0 24px;
+  }
+
+  .projects-header {
+    margin-bottom: 60px;
+  }
+
+  .projects-title {
+    font-size: 42px;
+  }
+
+  .projects-subtitle {
+    font-size: 16px;
+  }
+
+  .project-filter {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-content {
+    padding: 24px 20px;
+  }
+
+  .project-title {
+    font-size: 24px;
+  }
+
+  .action-btn {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+.project-card {
+  animation: fadeInUp 0.6s ease backwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
