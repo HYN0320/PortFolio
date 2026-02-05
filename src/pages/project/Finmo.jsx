@@ -6,7 +6,7 @@ import './Finmo.css';
 ===================== */
 import finmo2Img from '../../assets/projects/Finmo2.png';
 import finmo3Img from '../../assets/projects/Finmo3.png';
-import finmo1Img from '../../assets/projects/finmo1.png';
+import finmo1Img from '../../assets/projects/finmo11.png';
 import finmoMonthlyImg from '../../assets/projects/33.png';
 
 const Finmo = () => {
