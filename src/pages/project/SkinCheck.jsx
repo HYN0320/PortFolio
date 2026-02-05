@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './SkinCheck.css';
+import './Skincheck.css';
 
 /* =====================
    IMAGE IMPORTS (경로만 변경)
